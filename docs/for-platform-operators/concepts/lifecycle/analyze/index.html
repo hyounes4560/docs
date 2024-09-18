@@ -899,42 +899,51 @@
           <h1 class="title">Analyze</h1>
         </div>
 
-        <p>The <code>analyzer</code> restores files that buildpacks may use to optimize the build and export phases.</p>
-<p>Prior to <code>Platform API 0.7</code>, the <code>analyzer</code> was responsible for analyzing the metadata from the cache and the previously built image (if available) to determine what layers can or cannot be reused.
+        <p>The <code>analyzer</code> restores files that buildpacks may use to optimize the <code>build</code> and <code>export</code> phases.</p>
+<p>Prior to <code>Platform API 0.7</code>, the <code>analyzer</code> was responsible for analyzing the metadata from the cache and the previously built image, if available, to determine what layers can or cannot be reused.
 This information is used during the <code>export</code> phase in order to avoid re-uploading unchanged layers.<br>
-Starting from <code>Platform API 0.7</code>, the <code>analyze</code> phase runs before the <code>detect</code> phase in order to validate registry access for all images that are used during the build as early as possible. In this way it provides faster failures for end users. The other responsibilities of the <code>analyzer</code> were moved to the <code>restorer</code>.<br>
-For more information, please see <a href="https://buildpacks.io/docs/for-platform-operators/how-to/migrate/platform-api-0.6-0.7/">this migration guide</a>.</p>
+Starting from <code>Platform API 0.7</code>, the <code>analyze</code> phase runs before the <code>detect</code> phase in order to validate registry access for all images that are used during the <code>build</code> as early as possible. In this way it provides faster failures for end users. The other responsibilities of the <code>analyzer</code> were moved to the <code>restorer</code>.<br>
+For more information, please see <a href="https://buildpacks.io/docs/for-platform-operators/how-to/migrate/deprecated/platform-api-0.6-0.7/">this migration guide</a>.</p>
+<p>The <code>lifecycle</code> should attempt to locate a reference to the latest <code>OCI image</code> from a previous build that is readable and was created by the <code>lifecycle</code> using the same application source code. If no such reference is found, the <code>analysis</code> is skipped.\</p>
+<p>The <code>lifecycle</code> must write <a href="https://github.com/buildpacks/spec/blob/main/platform.md#analyzedtoml-toml">analysis metadata</a> to <code>&lt;analyzed&gt;</code>, where:</p>
+<ul>
+<li><code>image</code> MUST describe the <code>&lt;previous-image&gt;</code>, if accessible</li>
+<li><code>run-image</code> MUST describe the <code>&lt;run-image&gt;</code></li>
+</ul>
 <h3 id="exit-codes">Exit Codes</h3>
+<p>If the <code>analyze</code> phase was successful or there was any error during the process, the output will have one of the following exit codes:</p>
 <table>
-<thead>
-<tr>
-<th>Exit Code</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>0</code></td>
-<td>Success</td>
-</tr>
-<tr>
-<td><code>11</code></td>
-<td>Platform API incompatibility error</td>
-</tr>
-<tr>
-<td><code>12</code></td>
-<td>Buildpack API incompatibility error</td>
-</tr>
-<tr>
-<td><code>1-10</code>, <code>13-19</code></td>
-<td>Generic lifecycle errors</td>
-</tr>
-<tr>
-<td><code>30-39</code></td>
-<td>Analysis-specific lifecycle errors</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Exit Code</th>
+          <th style="text-align: left">Result</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>0</code></td>
+          <td style="text-align: left">Success</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>11</code></td>
+          <td style="text-align: left">Platform API incompatibility error</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>12</code></td>
+          <td style="text-align: left">Buildpack API incompatibility error</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>1-10</code>, <code>13-19</code></td>
+          <td style="text-align: left">Generic lifecycle errors</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>30-39</code></td>
+          <td style="text-align: left">Analysis-specific lifecycle errors</td>
+      </tr>
+  </tbody>
 </table>
+<hr>
+<p>For more information about the <code>analyzer</code>, see the <a href="https://github.com/buildpacks/spec/blob/main/platform.md#analyzer">Platform API spec</a>.</p>
 
         
 

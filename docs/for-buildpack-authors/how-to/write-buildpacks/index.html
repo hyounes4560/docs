@@ -912,7 +912,7 @@ which defines the contract between buildpacks and the lifecycle.</p>
             </div>
         
           <h2><a href="https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/use-build-plan/" class="">Use the build plan</a></h2>
-          <p class="m-1">The <a href="https://github.com/buildpacks/spec/blob/main/buildpack.md#build-plan-toml">Build Plan</a> is a document that buildpacks can use to pass information between the <code>detect</code> and <code>build</code> phases, and between each other.
+          <p class="m-1">The <a href="https://buildpacks.io/docs/for-buildpack-authors/concepts/build-plan/">Build Plan</a> is a document that buildpacks can use to pass information between the <code>detect</code> and <code>build</code> phases, and between each other.
 The build plan is passed (by the lifecycle) as a parameter to the <code>detect</code> and <code>build</code> binaries of each buildpack.</p>
 
           
@@ -946,7 +946,7 @@ to describe the dependencies that they provide.</p>
             </div>
         
           <h2><a href="https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/add-labels/" class="">Add labels to the application image</a></h2>
-          <p class="m-1"></p>
+          <p class="m-1">Labels are key-value pairs, stored as strings, that are attached to an image (i.e., arbitrary metadata). Labels are used to add helpful descriptions or attributes to an application image, which are meaningful to users.</p>
 
           
             <div class="text-md-right">
@@ -954,7 +954,7 @@ to describe the dependencies that they provide.</p>
             </div>
         
           <h2><a href="https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/clear-env/" class="">Clear the buildpack environment</a></h2>
-          <p class="m-1"></p>
+          <p class="m-1">&ldquo;Clearing&rdquo; the buildpack environment with <code>clear-env</code> is the process of preventing end-users from customizing a buildpack&rsquo;s behavior through environment variables.</p>
 
           
             <div class="text-md-right">
@@ -962,7 +962,7 @@ to describe the dependencies that they provide.</p>
             </div>
         
           <h2><a href="https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/create-slice-layers/" class="">Create slice layers</a></h2>
-          <p class="m-1"></p>
+          <p class="m-1">After all buildpacks have executed, the contents of the application directory will be included in the final application image as a single layer, OR as <code>slice</code> layers. A <code>slice</code> layer contains a portion of the application directory as defined by a <code>filepath</code> glob.</p>
 
           
             <div class="text-md-right">
@@ -970,7 +970,7 @@ to describe the dependencies that they provide.</p>
             </div>
         
           <h2><a href="https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/re-use-layers/" class="">Re-use dependency layers</a></h2>
-          <p class="m-1"></p>
+          <p class="m-1">The <a href="https://buildpacks.io/docs/for-buildpack-authors/concepts/lifecycle-phases/">lifecycle</a> provides a mechanism for buildpacks to explicitly opt into reusing any necessary <a href="https://buildpacks.io/docs/for-buildpack-authors/concepts/layer/">dependency layers</a> from a previous build. Buildpacks may modify cached build dependencies before reusing them.</p>
 
           
             <div class="text-md-right">
@@ -978,7 +978,7 @@ to describe the dependencies that they provide.</p>
             </div>
         
           <h2><a href="https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/specify-env/" class="">Specify the environment</a></h2>
-          <p class="m-1"></p>
+          <p class="m-1">Environment variables are a common way to configure buildpacks at build-time and the application at runtime.</p>
 
           
             <div class="text-md-right">
@@ -986,7 +986,7 @@ to describe the dependencies that they provide.</p>
             </div>
         
           <h2><a href="https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/use-exec.d/" class="">Use exec.d binaries to configure the application at runtime</a></h2>
-          <p class="m-1"></p>
+          <p class="m-1">The <a href="https://github.com/buildpacks/spec/blob/main/buildpack.md#execd">buildpacks <code>exec.d</code> interface</a> allows buildpack authors to execute custom scripts or binaries when the application image is started.</p>
 
           
             <div class="text-md-right">

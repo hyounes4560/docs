@@ -9,7 +9,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Tekton is an open-source CI/CD system running on k8s.
-The CNB project has created two reference &amp;ldquo;tasks&amp;rdquo; for performing buildpacks builds, both of which use the lifecycle directly (i.e.…"/>
+The CNB project has created two reference &ldquo;tasks&rdquo; for performing buildpacks builds, both of which use the lifecycle directly (i.e.…"/>
 <link rel="canonical" content="https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/tekton/">
 <link rel="icon" type="image/png" href="/images/favicon.png">
 
@@ -24,7 +24,7 @@ The CNB project has created two reference &amp;ldquo;tasks&amp;rdquo; for perfor
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Cloud Native Buildpacks">
 <meta property="og:description" content="Tekton is an open-source CI/CD system running on k8s.
-The CNB project has created two reference &amp;ldquo;tasks&amp;rdquo; for performing buildpacks builds, both of which use the lifecycle directly (i.e.…">
+The CNB project has created two reference &ldquo;tasks&rdquo; for performing buildpacks builds, both of which use the lifecycle directly (i.e.…">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://buildpacks.io/images/buildpacks-social-card.jpg">
 <meta property="og:image:alt" content="Buildpacks project logo">
@@ -920,8 +920,8 @@ both of which use the <a href="/docs/for-platform-operators/concepts/lifecycle">
 <p>We also recommend using the <code>Tekton dashboard</code>. To install it, follow the steps in the <a href="https://tekton.dev/docs/dashboard/">dashboard docs</a>, and
 start the dashboard server.</p>
 <h3 id="2-install-the-buildpacks-task">2. Install the Buildpacks Task</h3>
-<p>Install the latest version of the buildpacks task (currently <code>0.3</code>), by running:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/master/task/buildpacks/0.3/buildpacks.yaml
+<p>Install the latest version of the buildpacks task (currently <code>0.6</code>), by running:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/master/task/buildpacks/0.6/buildpacks.yaml
 </span></span></code></pre></div><h3 id="3-install-git-clone-task">3. Install git-clone Task</h3>
 <p>For our <code>pipeline</code>, we will use the <code>git-clone</code> task to clone a repository. Install the latest version (currently <code>0.4</code>), by running:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/master/task/git-clone/0.4/git-clone.yaml

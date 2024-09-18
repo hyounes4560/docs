@@ -899,54 +899,63 @@
           <h1 class="title">Create</h1>
         </div>
 
-        <p>The <code>creator</code> runs analyze, detect, restore, build, and export in a single command.</p>
+        <p>The <code>creator</code> runs <code>analyze</code>, <code>detect</code>, <code>restore</code>, <code>build</code>, and <code>export</code> in a single command.</p>
+<p>The <code>platform</code> must execute <code>creator</code> in the <code>build</code> environment.
+An image reference (i.e., <code>&lt;previous-image&gt;</code>) to be analyzed is one of the <code>creator</code>&rsquo;s inputs.</p>
+<ul>
+<li><strong>If</strong> <code>&lt;skip-restore&gt;</code> is <code>true</code> the <code>creator</code> shall skip the restoration of any data to each buildpack&rsquo;s layers directory, with the exception of <code>store.toml</code>.</li>
+<li><strong>If</strong> the platform provides one or more <code>&lt;tag&gt;</code> inputs they shall be treated as additional <code>&lt;image&gt;</code> inputs to the <code>exporter</code></li>
+</ul>
 <h3 id="exit-codes">Exit Codes</h3>
+<p>The outputs produced by <code>creator</code> are identical to those produced by <code>exporter</code>, with the following additional expanded set of error codes.</p>
 <table>
-<thead>
-<tr>
-<th>Exit Code</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>0</code></td>
-<td>Success</td>
-</tr>
-<tr>
-<td><code>11</code></td>
-<td>Platform API incompatibility error</td>
-</tr>
-<tr>
-<td><code>12</code></td>
-<td>Buildpack API incompatibility error</td>
-</tr>
-<tr>
-<td><code>1-10</code>, <code>13-19</code></td>
-<td>Generic lifecycle errors</td>
-</tr>
-<tr>
-<td><code>20-29</code></td>
-<td>Detection-specific lifecycle errors</td>
-</tr>
-<tr>
-<td><code>30-39</code></td>
-<td>Analysis-specific lifecycle errors</td>
-</tr>
-<tr>
-<td><code>40-49</code></td>
-<td>Restoration-specific lifecycle errors</td>
-</tr>
-<tr>
-<td><code>50-59</code></td>
-<td>Build-specific lifecycle errors</td>
-</tr>
-<tr>
-<td><code>60-69</code></td>
-<td>Export-specific lifecycle errors</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Exit Code</th>
+          <th style="text-align: left">Result</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>0</code></td>
+          <td style="text-align: left">Success</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>11</code></td>
+          <td style="text-align: left">Platform API incompatibility error</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>12</code></td>
+          <td style="text-align: left">Buildpack API incompatibility error</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>1-10</code>, <code>13-19</code></td>
+          <td style="text-align: left">Generic lifecycle errors</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>20-29</code></td>
+          <td style="text-align: left">Detection-specific lifecycle errors</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>30-39</code></td>
+          <td style="text-align: left">Analysis-specific lifecycle errors</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>40-49</code></td>
+          <td style="text-align: left">Restoration-specific lifecycle errors</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>50-59</code></td>
+          <td style="text-align: left">Build-specific lifecycle errors</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>60-69</code></td>
+          <td style="text-align: left">Export-specific lifecycle errors</td>
+      </tr>
+  </tbody>
 </table>
+<hr>
+<p>For more information about the <code>creator</code>, see the <a href="https://github.com/buildpacks/spec/blob/main/platform.md#creator">Platform API spec</a>.</p>
 
         
 

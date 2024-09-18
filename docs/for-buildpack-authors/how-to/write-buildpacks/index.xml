@@ -19,7 +19,7 @@
       <link>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/use-build-plan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/use-build-plan/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;https://github.com/buildpacks/spec/blob/main/buildpack.md#build-plan-toml&#34;&gt;Build Plan&lt;/a&gt; is a document that buildpacks can use to pass information between the &lt;code&gt;detect&lt;/code&gt; and &lt;code&gt;build&lt;/code&gt; phases, and between each other.&#xA;The build plan is passed (by the lifecycle) as a parameter to the &lt;code&gt;detect&lt;/code&gt; and &lt;code&gt;build&lt;/code&gt; binaries of each buildpack.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://buildpacks.io/docs/for-buildpack-authors/concepts/build-plan/&#34;&gt;Build Plan&lt;/a&gt; is a document that buildpacks can use to pass information between the &lt;code&gt;detect&lt;/code&gt; and &lt;code&gt;build&lt;/code&gt; phases, and between each other.&#xA;The build plan is passed (by the lifecycle) as a parameter to the &lt;code&gt;detect&lt;/code&gt; and &lt;code&gt;build&lt;/code&gt; binaries of each buildpack.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Create dependency layers</title>
@@ -47,42 +47,42 @@
       <link>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/add-labels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/add-labels/</guid>
-      <description></description>
+      <description>&lt;p&gt;Labels are key-value pairs, stored as strings, that are attached to an image (i.e., arbitrary metadata). Labels are used to add helpful descriptions or attributes to an application image, which are meaningful to users.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Clear the buildpack environment</title>
       <link>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/clear-env/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/clear-env/</guid>
-      <description></description>
+      <description>&lt;p&gt;&amp;ldquo;Clearing&amp;rdquo; the buildpack environment with &lt;code&gt;clear-env&lt;/code&gt; is the process of preventing end-users from customizing a buildpack&amp;rsquo;s behavior through environment variables.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Create slice layers</title>
       <link>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/create-slice-layers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/create-slice-layers/</guid>
-      <description></description>
+      <description>&lt;p&gt;After all buildpacks have executed, the contents of the application directory will be included in the final application image as a single layer, OR as &lt;code&gt;slice&lt;/code&gt; layers. A &lt;code&gt;slice&lt;/code&gt; layer contains a portion of the application directory as defined by a &lt;code&gt;filepath&lt;/code&gt; glob.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Re-use dependency layers</title>
       <link>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/re-use-layers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/re-use-layers/</guid>
-      <description></description>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://buildpacks.io/docs/for-buildpack-authors/concepts/lifecycle-phases/&#34;&gt;lifecycle&lt;/a&gt; provides a mechanism for buildpacks to explicitly opt into reusing any necessary &lt;a href=&#34;https://buildpacks.io/docs/for-buildpack-authors/concepts/layer/&#34;&gt;dependency layers&lt;/a&gt; from a previous build. Buildpacks may modify cached build dependencies before reusing them.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Specify the environment</title>
       <link>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/specify-env/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/specify-env/</guid>
-      <description></description>
+      <description>&lt;p&gt;Environment variables are a common way to configure buildpacks at build-time and the application at runtime.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Use exec.d binaries to configure the application at runtime</title>
       <link>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/use-exec.d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/use-exec.d/</guid>
-      <description></description>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://github.com/buildpacks/spec/blob/main/buildpack.md#execd&#34;&gt;buildpacks &lt;code&gt;exec.d&lt;/code&gt; interface&lt;/a&gt; allows buildpack authors to execute custom scripts or binaries when the application image is started.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
